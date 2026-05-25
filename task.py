@@ -1,10 +1,17 @@
 import sympy
-from typing import Dict
-
+from sympy import diff, Dict
+from sympy import symbols
 # Controlla il file readme.md per i dettagli su ciascun sub-task
 
 def calcola_derivata(espressione: str, variabile: str) -> sympy.Expr:
     """Sub-task 1: Calcolare una Derivata."""
+    print("Rispetto quale variabile stai derivando?")
+    x = symbols(input("Inserisci variabile: "))
+    print("Quale è la tua funzione?")
+    expr = input("Inserisci la tua funzione: ")
+    df = diff(expr,x)
+    print(f"La derivata della funzione inserita è:\n{df}")
+    print("")
     pass
 
 def calcola_integrale_definito(espressione: str, variabile: str, estremo_inf: float, estremo_sup: float) -> sympy.Expr:
@@ -19,7 +26,7 @@ def calcola_polinomio_taylor(espressione: str, variabile: str, punto: float, ord
     """Sub-task 4: Calcolare una Serie di Taylor."""
     pass
 
-def risolvi_sistema_lineare(eq1: str, eq2: str, var1: str, var2: str) -> Dict[sympy.Symbol, sympy.Expr]:
+def risolvi_sistema_lineare(eq1: str, eq2: str, var1: str, var2: str):
     """Sub-task 5: Risolvere un Sistema Lineare."""
     pass
 
