@@ -1,6 +1,7 @@
 import sympy
 from sympy import diff, Dict
 from sympy import symbols
+from sympy import series
 # Controlla il file readme.md per i dettagli su ciascun sub-task
 
 def calcola_derivata(espressione: str, variabile: str) -> sympy.Expr:
@@ -36,6 +37,12 @@ def calcola_limite(espressione: str, variabile: str, punto: str) -> sympy.Expr:
 
 def calcola_polinomio_taylor(espressione: str, variabile: str, punto: float, ordine: int) -> sympy.Expr:
     """Sub-task 4: Calcolare una Serie di Taylor."""
+    ess = espressione
+    x = variabile
+    z = punto
+    n = ordine
+    somm = series(ess,x,z,n,"+")
+    return(somm)
     pass
 
 def risolvi_sistema_lineare(eq1: str, eq2: str, var1: str, var2: str):
