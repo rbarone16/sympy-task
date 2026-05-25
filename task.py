@@ -1,7 +1,7 @@
 import sympy
 from sympy import diff, Dict
 from sympy import symbols
-from sympy import series
+from sympy import series, linsolve
 # Controlla il file readme.md per i dettagli su ciascun sub-task
 
 def calcola_derivata(espressione: str, variabile: str) -> sympy.Expr:
@@ -47,6 +47,12 @@ def calcola_polinomio_taylor(espressione: str, variabile: str, punto: float, ord
 
 def risolvi_sistema_lineare(eq1: str, eq2: str, var1: str, var2: str):
     """Sub-task 5: Risolvere un Sistema Lineare."""
+    s1 = eq1
+    s2 = eq2
+    x = symbols(var1)
+    y = symbols(var2)
+    sol = linsolve([eq1, eq2], (x,y))
+    return(sol)
     pass
 
 def main():
